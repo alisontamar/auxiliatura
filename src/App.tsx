@@ -4,6 +4,7 @@ import { StudentRanking } from './components/StudentRanking';
 import { TeacherLogin } from './components/TeacherLogin';
 import { TeacherDashboard } from './components/TeacherDashboard';
 import { useSupabase } from './hooks/useSupabase';
+import { Analytics } from "@vercel/analytics/react"
 import { UserCheck, Eye } from 'lucide-react';
 
 function App() {
@@ -87,6 +88,7 @@ useEffect(() => {
 
   if (loading) {
     return (
+      
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
@@ -163,6 +165,7 @@ useEffect(() => {
           onLogout={handleTeacherLogout}
         />
       )}
+       <Analytics />
     </div>
   );
 }
